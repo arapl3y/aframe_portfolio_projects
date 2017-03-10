@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Curved Images</title>
+  <script src="//aframe.io/releases/0.5.0/aframe.min.js"></script>
+  <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.3.1/dist/aframe-extras.min.js"></script>
+</head>
+</head>
+
+<body>
+  <a-scene>
+    <a-assets>
+      <img id="image1" src="local-weather-min.png" />
+      <img id="image2" src="quote-machine-min.png" />
+      <img id="image3" src="wikipedia-viewer-min.png" />
+      <img id="image4" src="todo-min.png" />
+    </a-assets>
+
+    <a-entity  visible="true" : position="0 -15 0" easing="ease-out">
+               <a-animation attribute="position" from="0 -15 0" to="0 3 2" dur="1000" easing="linear" fill="forwards" repeat="0"></a-animation>
+
+               <a-animation attribute="rotation" to="0 -360 0" dur="85000" easing="linear" fill="forwards" repeat="indefinite"></a-animation>
+
+               <a-curvedimage src="#image1" height="3.0" radius="4.7" theta-length="72" rotation="0 0 0" scale="0.8 0.7 0.8"></a-curvedimage>
+
+               <a-curvedimage src="#image2" height="3.0" radius="4.7" theta-length="72" rotation="0 90 0" scale="0.8 0.7 0.8"></a-curvedimage>
+
+               <a-curvedimage src="#image3" height="3.0" radius="4.7" theta-length="72" rotation="0 180 0" scale="0.8 0.7 0.8"></a-curvedimage>
+
+              <a-curvedimage src="#image4" height="3.0" radius="4.7" theta-length="72" rotation="0 270 0" scale="0.8 0.7 0.8"></a-curvedimage>
+    </a-entity>
+
+    <a-sky color="#AADDF0"></a-sky>
+    <a-ocean width="50" depth="50" density="40" opacity="1" position="0 0 2"></a-ocean>
+
+
+
+    <a-entity camera look-controls wasd-controls position="0 2.5 2">
+      <a-cursor color="#000" fuse="true" timeout="10"></a-cursor>
+    </a-entity>
+
+
+    <a-light type="ambient" color="#ccc"></a-light>
+    <a-light color="#ddf" distance="100" intensity="0.4" type="point"></a-light>
+    <a-light color="#ddf" position="3 10 -10" distance="50" intensity="0.4" type="point"></a-light>
+
+
+
+
+  </a-scene>
+
+
+
+</body>
+
+</html>
